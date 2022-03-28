@@ -26,6 +26,8 @@ final class RemovemeItemDataProvider extends AbstractController implements ItemD
 
     public function getItem(string $resourceClass, $id, string $operationName = null, array $context = []): ?Removeme
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         return $this->api->getRemovemeById($id);
     }
 }

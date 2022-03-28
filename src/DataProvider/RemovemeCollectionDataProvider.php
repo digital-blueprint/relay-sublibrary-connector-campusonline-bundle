@@ -27,6 +27,8 @@ final class RemovemeCollectionDataProvider extends AbstractController implements
 
     public function getCollection(string $resourceClass, string $operationName = null, array $context = []): ArrayFullPaginator
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $perPage = 30;
         $page = 1;
 

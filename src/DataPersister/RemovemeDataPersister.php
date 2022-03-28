@@ -25,11 +25,13 @@ class RemovemeDataPersister extends AbstractController implements DataPersisterI
 
     public function persist($data): void
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         // TODO
     }
 
     public function remove($data)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         // TODO
     }
 }
