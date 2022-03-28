@@ -1,0 +1,30 @@
+services:
+  Dbp\Relay\SublibraryConnectorCampusonlineBundle\Command\TestCommand:
+    autowire: true
+    autoconfigure: true
+
+  Dbp\Relay\SublibraryConnectorCampusonlineBundle\Controller\:
+    resource: '../../Controller'
+    autoconfigure: true
+    autowire: true
+
+  Dbp\Relay\SublibraryConnectorCampusonlineBundle\DataPersister\:
+    resource: '../../DataPersister'
+    autowire: true
+    autoconfigure: true
+
+  Dbp\Relay\SublibraryConnectorCampusonlineBundle\DataProvider\:
+    resource: '../../DataProvider'
+    autowire: true
+    autoconfigure: true
+
+  Dbp\Relay\SublibraryConnectorCampusonlineBundle\Service\ExternalApi:
+    autowire: true
+    autoconfigure: true
+
+  Dbp\Relay\SublibraryConnectorCampusonlineBundle\Service\MyCustomService:
+    autowire: true
+    autoconfigure: true
+
+  Dbp\Relay\SublibraryConnectorCampusonlineBundle\Service\RemovemeProviderInterface:
+    '@Dbp\Relay\SublibraryConnectorCampusonlineBundle\Service\ExternalApi'
