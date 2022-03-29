@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3c8083fb1158c777f9df959b13b731b",
+    "content-hash": "8052a57d4873503a5db414d0bd0c8f73",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -233,86 +233,6 @@
             "time": "2022-01-11T10:29:54+00:00"
         },
         {
-            "name": "dbp/api-alma-bundle",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "git@gitlab.tugraz.at:dbp/library/api-alma-bundle.git",
-                "reference": "c0656efa1c8e3912a3a10fc5cbcd56741471ba11"
-            },
-            "require": {
-                "adldap2/adldap2": "^10.4",
-                "api-platform/core": "^2.6",
-                "dbp/relay-base-organization-bundle": "dev-main as 0.1.3",
-                "dbp/relay-base-person-bundle": "^0.2.0",
-                "dbp/relay-core-bundle": "^0.1.11",
-                "doctrine/common": "^3.1",
-                "ext-json": "*",
-                "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^7.0",
-                "kevinrob/guzzle-cache-middleware": "^3.3 | ^4.0",
-                "league/uri": "^6.4",
-                "php": ">=7.3",
-                "symfony/framework-bundle": "^5.2",
-                "symfony/security-core": "^5.2",
-                "symfony/yaml": "^5.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.0",
-                "mockery/mockery": "^1.2",
-                "nelmio/cors-bundle": "^2.1.0",
-                "phpstan/phpstan": "^1.0.0",
-                "phpstan/phpstan-phpunit": "^1.0.0",
-                "phpunit/phpunit": "^9",
-                "symfony/browser-kit": "^5.2",
-                "symfony/config": "^5.2",
-                "symfony/http-client": "^5.2",
-                "symfony/monolog-bundle": "^3.7",
-                "symfony/phpunit-bridge": "^5.2",
-                "symfony/security-bundle": "^5.2",
-                "symfony/twig-bundle": "^5.2",
-                "vimeo/psalm": "^4.0"
-            },
-            "default-branch": true,
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "DBP\\API\\AlmaBundle\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "DBP\\API\\AlmaBundle\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "@php vendor/bin/phpunit"
-                ],
-                "phpstan": [
-                    "@php vendor/bin/phpstan analyze --ansi"
-                ],
-                "psalm": [
-                    "@php vendor/bin/psalm"
-                ],
-                "lint": [
-                    "@composer run cs",
-                    "@composer run phpstan",
-                    "@composer run psalm"
-                ],
-                "cs-fix": [
-                    "@php vendor/bin/php-cs-fixer --ansi fix"
-                ],
-                "cs": [
-                    "@php vendor/bin/php-cs-fixer --ansi fix --dry-run --diff"
-                ]
-            },
-            "license": [
-                "AGPL-3.0-or-later"
-            ],
-            "time": "2022-03-28T00:26:35+00:00"
-        },
-        {
             "name": "dbp/relay-base-organization-bundle",
             "version": "dev-main",
             "source": {
@@ -479,6 +399,86 @@
             ],
             "description": "The core bundle of the Relay API gateway",
             "time": "2022-02-15T09:59:16+00:00"
+        },
+        {
+            "name": "dbp/relay-sublibrary-bundle",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.tugraz.at:dbp/library/dbp-relay-sublibrary-bundle.git",
+                "reference": "d12bc5d6b60b068eb137cc2aff36ef5984a84d65"
+            },
+            "require": {
+                "adldap2/adldap2": "^10.4",
+                "api-platform/core": "^2.6",
+                "dbp/relay-base-organization-bundle": "dev-main as 0.1.3",
+                "dbp/relay-base-person-bundle": "^0.2.0",
+                "dbp/relay-core-bundle": "^0.1.11",
+                "doctrine/common": "^3.1",
+                "ext-json": "*",
+                "ext-simplexml": "*",
+                "guzzlehttp/guzzle": "^7.0",
+                "kevinrob/guzzle-cache-middleware": "^3.3 | ^4.0",
+                "league/uri": "^6.4",
+                "php": ">=7.3",
+                "symfony/framework-bundle": "^5.2",
+                "symfony/security-core": "^5.2",
+                "symfony/yaml": "^5.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "mockery/mockery": "^1.2",
+                "nelmio/cors-bundle": "^2.1.0",
+                "phpstan/phpstan": "^1.0.0",
+                "phpstan/phpstan-phpunit": "^1.0.0",
+                "phpunit/phpunit": "^9",
+                "symfony/browser-kit": "^5.2",
+                "symfony/config": "^5.2",
+                "symfony/http-client": "^5.2",
+                "symfony/monolog-bundle": "^3.7",
+                "symfony/phpunit-bridge": "^5.2",
+                "symfony/security-bundle": "^5.2",
+                "symfony/twig-bundle": "^5.2",
+                "vimeo/psalm": "^4.0"
+            },
+            "default-branch": true,
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Dbp\\Relay\\SublibraryBundle\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Dbp\\Relay\\SublibraryBundle\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@php vendor/bin/phpunit"
+                ],
+                "phpstan": [
+                    "@php vendor/bin/phpstan analyze --ansi"
+                ],
+                "psalm": [
+                    "@php vendor/bin/psalm"
+                ],
+                "lint": [
+                    "@composer run cs",
+                    "@composer run phpstan",
+                    "@composer run psalm"
+                ],
+                "cs-fix": [
+                    "@php vendor/bin/php-cs-fixer --ansi fix"
+                ],
+                "cs": [
+                    "@php vendor/bin/php-cs-fixer --ansi fix --dry-run --diff"
+                ]
+            },
+            "license": [
+                "AGPL-3.0-or-later"
+            ],
+            "time": "2022-03-29T05:36:16+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -11130,8 +11130,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "dbp/api-alma-bundle": 20,
-        "dbp/relay-base-organization-bundle": 20
+        "dbp/relay-base-organization-bundle": 20,
+        "dbp/relay-sublibrary-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
@@ -11143,5 +11143,5 @@
     "platform-overrides": {
         "php": "7.3"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.1.0"
 }
