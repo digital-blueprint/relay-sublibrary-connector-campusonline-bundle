@@ -3,5 +3,5 @@ services:
     autowire: true
     autoconfigure: true
 
-  DBP\API\AlmaBundle\API\SublibraryProviderInterface:
+  Dbp\Relay\SublibraryBundle\API\SublibraryProviderInterface:
     '@Dbp\Relay\SublibraryConnectorCampusonlineBundle\Service\SublibraryProvider'

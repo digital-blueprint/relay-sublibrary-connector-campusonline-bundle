@@ -4,18 +4,25 @@ declare(strict_types=1);
 
 namespace Dbp\Relay\SublibraryConnectorCampusonlineBundle\Service;
 
-use DBP\API\AlmaBundle\Entity\Sublibrary;
-use Dbp\Relay\BaseOrganizationBundle\API\OrganizationProviderInterface;
+use Dbp\Relay\BaseOrganizationConnectorCampusonlineBundle\Service\OrganizationApi;
 use Dbp\Relay\BasePersonBundle\Entity\Person;
+use Dbp\Relay\SublibraryBundle\API\SublibraryProviderInterface;
+use Dbp\Relay\SublibraryBundle\Entity\Sublibrary;
+use Dbp\Relay\SublibraryConnectorCampusonlineBundle\Event\SublibraryProviderPostEvent;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class SublibraryProvider implements SublibraryProviderInterface
 {
-    /** @var OrganizationProviderInterface */
-    private $organizationProvider;
+    /** @var OrganizationApi */
+    private $organizationApi;
 
-    public function __construct(OrganizationProviderInterface $organizationProvider)
+    /** @var EventDispatcherInterface */
+    private $eventDispatcher;
+
+    public function __construct(OrganizationApi $organizationApi, EventDispatcherInterface $eventDispatcher)
     {
-        $this->organizationProvider = $organizationProvider;
+        $this->organizationApi = $organizationApi;
+        $this->eventDispatcher = $eventDispatcher;
     }
 
     public function getSublibrary(string $identifier, array $options = []): ?Sublibrary
@@ -54,20 +61,23 @@ class SublibraryProvider implements SublibraryProviderInterface
     {
         $sublibrary = null;
         if (self::parseSublibraryIdentifier($identifier, $orgUnitId, $sublibraryCode)) {
-            $organization = $this->organizationProvider->getOrganizationById($orgUnitId, $options);
-            if ($organization !== null) {
+            $organizationUnitData = $this->organizationApi->getOrganizationById($orgUnitId, $options);
+            if ($organizationUnitData !== null) {
                 $sublibrary = new Sublibrary();
-                $sublibrary->setIdentifier($identifier);
-                $sublibrary->setName($organization->getName());
-                $sublibrary->setCode($sublibraryCode);
+                $sublibrary->setIdentifier($organizationUnitData->getIdentifier());
+                $sublibrary->setName($organizationUnitData->getName());
+                $sublibrary->setCode($organizationUnitData->getCode());
             }
+            $postEvent = new SublibraryProviderPostEvent($orgUnitId, $sublibrary, $organizationUnitData, $options);
+            $this->eventDispatcher->dispatch($postEvent, SublibraryProviderPostEvent::NAME);
+            $sublibrary = $postEvent->getSublibrary();
         }
 
         return $sublibrary;
     }
 
     /**
-     * Gets the list of sublibrary IDs the given person has access to. This function is currently TU Graz specific
+     * Gets the list of sublibrary IDs the given person has access to. This function is currently TU Graz specific.
      *
      * @return string[]
      */
@@ -94,13 +104,13 @@ class SublibraryProvider implements SublibraryProviderInterface
     /**
      * extracts the org unit ID and the sublibrary code from the sublibrary ID.
      */
-    private static function parseSublibraryIdentifier(string $sublibraryIdentifier, string& $orgUnitId, string& $sublibraryCode): bool
+    private static function parseSublibraryIdentifier(string $sublibraryIdentifier, string &$orgUnitId = null, string &$sublibraryCode = null): bool
     {
         $regex = "/^(\d+)-F([\d_]+)$/i";
 
         if (preg_match($regex, $sublibraryIdentifier, $matches)) {
-            $orgUnitId = $matches[2];
-            $sublibraryCode = $matches[1];
+            $orgUnitId = $matches[1];
+            $sublibraryCode = $matches[2];
 
             return true;
         }

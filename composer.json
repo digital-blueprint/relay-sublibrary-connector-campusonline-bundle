@@ -7,7 +7,9 @@
         "php": ">=7.3",
         "ext-json": "*",
         "api-platform/core": "^2.6",
+        "dbp/campusonline-api": "dev-main as 0.2.2",
         "dbp/relay-base-organization-bundle": "dev-main",
+        "dbp/relay-base-organization-connector-campusonline-bundle": "dev-main",
         "dbp/relay-core-bundle": "^0.1.11",
         "dbp/relay-sublibrary-bundle": "dev-main",
         "symfony/framework-bundle": "^5.4"
@@ -27,6 +29,10 @@
         {
             "type": "vcs",
             "url": "git@gitlab.tugraz.at:dbp/library/dbp-relay-sublibrary-bundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.tugraz.at:dbp/relay/dbp-relay-base-organization-connector-campusonline-bundle.git"
         }
     ],
     "autoload": {
