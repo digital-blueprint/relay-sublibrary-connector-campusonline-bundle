@@ -4,15 +4,21 @@ declare(strict_types=1);
 
 namespace Dbp\Relay\SublibraryConnectorCampusonlineBundle\Service;
 
+use Dbp\CampusonlineApi\LegacyWebService\ApiException;
 use Dbp\Relay\BaseOrganizationConnectorCampusonlineBundle\Service\OrganizationApi;
 use Dbp\Relay\BasePersonBundle\Entity\Person;
+use Dbp\Relay\CoreBundle\Exception\ApiError;
 use Dbp\Relay\SublibraryBundle\API\SublibraryProviderInterface;
 use Dbp\Relay\SublibraryBundle\Entity\Sublibrary;
 use Dbp\Relay\SublibraryConnectorCampusonlineBundle\Event\SublibraryProviderPostEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 class SublibraryProvider implements SublibraryProviderInterface
 {
+    /** @var string */
+    private const SUBLIBRARY_CODE_PREFIX = 'F';
+
     /** @var OrganizationApi */
     private $organizationApi;
 
@@ -61,13 +67,22 @@ class SublibraryProvider implements SublibraryProviderInterface
     {
         $sublibrary = null;
         if (self::parseSublibraryIdentifier($identifier, $orgUnitId, $sublibraryCode)) {
-            $organizationUnitData = $this->organizationApi->getOrganizationById($orgUnitId, $options);
+            $organizationUnitData = null;
+            try {
+                $organizationUnitData = $this->organizationApi->getOrganizationById($orgUnitId, $options);
+            } catch (ApiException $e) {
+                // unfortunately, campusonline organization API returns HTTP_UNAUTHORIZED for IDs it doesn't find
+                if (!$e->isHttpResponseCodeNotFound() && !$e->isHttpResponseCodeUnauthorized()) {
+                    throw new ApiError(Response::HTTP_INTERNAL_SERVER_ERROR, $e->getMessage());
+                }
+            }
             if ($organizationUnitData !== null) {
                 $sublibrary = new Sublibrary();
                 $sublibrary->setIdentifier($organizationUnitData->getIdentifier());
                 $sublibrary->setName($organizationUnitData->getName());
-                $sublibrary->setCode($organizationUnitData->getCode());
+                $sublibrary->setCode(self::SUBLIBRARY_CODE_PREFIX.$organizationUnitData->getCode());
             }
+
             $postEvent = new SublibraryProviderPostEvent($orgUnitId, $sublibrary, $organizationUnitData, $options);
             $this->eventDispatcher->dispatch($postEvent, SublibraryProviderPostEvent::NAME);
             $sublibrary = $postEvent->getSublibrary();
@@ -106,7 +121,7 @@ class SublibraryProvider implements SublibraryProviderInterface
      */
     private static function parseSublibraryIdentifier(string $sublibraryIdentifier, string &$orgUnitId = null, string &$sublibraryCode = null): bool
     {
-        $regex = "/^(\d+)-F([\d_]+)$/i";
+        $regex = "/^([\d_]+)-F(\d+)$/i";
 
         if (preg_match($regex, $sublibraryIdentifier, $matches)) {
             $orgUnitId = $matches[1];

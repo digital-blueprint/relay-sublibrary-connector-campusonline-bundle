@@ -516,7 +516,7 @@
             "source": {
                 "type": "git",
                 "url": "git@gitlab.tugraz.at:dbp/library/dbp-relay-sublibrary-bundle.git",
-                "reference": "6f49d0756da2456e5bcc2e627fb23f441f0df0cd"
+                "reference": "00009a5d3cb5663b0334c2e761aeb227a4c97b6c"
             },
             "require": {
                 "adldap2/adldap2": "^10.4",
@@ -588,7 +588,7 @@
             "license": [
                 "AGPL-3.0-or-later"
             ],
-            "time": "2022-03-30T09:07:56+00:00"
+            "time": "2022-03-30T10:45:41+00:00"
         },
         {
             "name": "doctrine/annotations",
