@@ -16,9 +16,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SublibraryProvider implements SublibraryProviderInterface
 {
-    /** @var string */
-    private const SUBLIBRARY_CODE_PREFIX = 'F';
-
     /** @var OrganizationApi */
     private $organizationApi;
 
@@ -37,107 +34,109 @@ class SublibraryProvider implements SublibraryProviderInterface
     }
 
     /**
-     * Gets the list of sublibraries the given person has access to.
+     * Returns the array of sub-library IDs the given Person is a library manager of.
      *
-     * @return Sublibrary[]
+     * @return string[]
      */
-    public function getSublibrariesByPerson(Person $person, array $options = []): array
+    public function getSublibraryIdsByLibraryManager(Person $person): array
     {
-        $sublibraries = [];
-
-        foreach ($this->getSublibraryIdsByPerson($person) as $sublibraryId) {
-            try {
-                $sublibrary = $this->getSublibraryInternal($sublibraryId, $options);
-                if ($sublibrary !== null) {
-                    $sublibraries[] = $sublibrary;
-                }
-            } catch (\Exception $e) {
-            }
-        }
-
-        return $sublibraries;
+        return $this->getSublibrariesByLibraryManagerInternal($person, true);
     }
 
-    public function hasPersonSublibraryPermissions(Person $person, string $sublibraryIdentifier)
+    /**
+     * Returns the array of sub-library codes the given Person is a library manager of.
+     *
+     * @return string[]
+     */
+    public function getSublibraryCodesByLibraryManager(Person $person): array
     {
-        return in_array($sublibraryIdentifier, $this->getSublibraryIdsByPerson($person), true);
+        return $this->getSublibrariesByLibraryManagerInternal($person, false);
+    }
+
+    /*
+     * Returns whether the given Person is a library manager of the Sublibrary with the given ID.
+     *
+     * @param string $sublibraryId The Sublibrary ID
+     */
+    public function isLibraryManagerById(Person $person, string $sublibraryId): bool
+    {
+        return in_array($sublibraryId, $this->getSublibrariesByLibraryManagerInternal($person, true), true);
+    }
+
+    /*
+     * Returns whether the given Person is a library manager of the Sublibrary with the given code.
+     *
+     * @param string $sublibraryCode The Sublibrary code
+     */
+    public function isLibraryManagerByCode(Person $person, string $sublibraryCode): bool
+    {
+        return in_array($sublibraryCode, $this->getSublibrariesByLibraryManagerInternal($person, false), true);
     }
 
     private function getSublibraryInternal(string $identifier, array $options): ?Sublibrary
     {
-        $sublibrary = null;
-        if (self::parseSublibraryIdentifier($identifier, $orgUnitId, $sublibraryCode)) {
-            $organizationUnitData = null;
-            try {
-                $organizationUnitData = $this->organizationApi->getOrganizationById($orgUnitId, $options);
-            } catch (ApiException $e) {
-                // unfortunately, campusonline organization API returns HTTP_UNAUTHORIZED for IDs it doesn't find
-                if (!$e->isHttpResponseCodeNotFound() && !$e->isHttpResponseCodeUnauthorized()) {
-                    throw new ApiError(Response::HTTP_INTERNAL_SERVER_ERROR, $e->getMessage());
-                }
-            }
-            if ($organizationUnitData !== null) {
-                $sublibrary = new Sublibrary();
-                $sublibrary->setIdentifier($organizationUnitData->getIdentifier());
-                $sublibrary->setName($organizationUnitData->getName());
-                $sublibrary->setCode(self::SUBLIBRARY_CODE_PREFIX.$organizationUnitData->getCode());
-            }
-
-            $postEvent = new SublibraryProviderPostEvent($orgUnitId, $sublibrary, $organizationUnitData, $options);
-            $this->eventDispatcher->dispatch($postEvent, SublibraryProviderPostEvent::NAME);
-            $sublibrary = $postEvent->getSublibrary();
+        if (!self::parseSublibraryIdentifier($identifier)) {
+            throw new ApiError(Response::HTTP_BAD_REQUEST, 'invalid library ID format '.$identifier);
         }
 
-        return $sublibrary;
+        $sublibrary = null;
+        $organizationUnitData = null;
+        try {
+            $organizationUnitData = $this->organizationApi->getOrganizationById($identifier, $options);
+        } catch (ApiException $e) {
+            // unfortunately, campusonline organization API returns HTTP_UNAUTHORIZED for IDs it doesn't find
+            if (!$e->isHttpResponseCodeNotFound() && !$e->isHttpResponseCodeUnauthorized()) {
+                throw new ApiError(Response::HTTP_INTERNAL_SERVER_ERROR, $e->getMessage());
+            }
+        }
+        if ($organizationUnitData !== null) {
+            $sublibrary = new Sublibrary();
+            $sublibrary->setIdentifier($organizationUnitData->getIdentifier());
+            $sublibrary->setName($organizationUnitData->getName());
+            $sublibrary->setCode($organizationUnitData->getIdentifier());
+        }
+
+        $postEvent = new SublibraryProviderPostEvent($identifier, $sublibrary, $organizationUnitData, $options);
+        $this->eventDispatcher->dispatch($postEvent, SublibraryProviderPostEvent::NAME);
+
+        return $postEvent->getSublibrary();
     }
 
     /**
-     * Gets the list of sublibrary IDs the given person has access to. This function is currently TU Graz specific.
+     * Gets the list of Sublibrary IDs/codes the given person is a library manager of. This function is currently TU Graz specific.
+     *
+     * @param bool $getIds If true, the Sublibrary IDs are returned, the Sublibrary codes otherwise
      *
      * @return string[]
      */
-    private function getSublibraryIdsByPerson(Person $person): array
+    private function getSublibrariesByLibraryManagerInternal(Person $person, bool $getIds): array
     {
-        $sublibraryIds = [];
+        $sublibraries = [];
         $regex = "/^F_BIB:F:(\d+):([\d_]+)$/i";
         $functions = $person->getExtraData('tug-functions');
 
         if ($functions !== null) {
             foreach ($functions as $function) {
                 if (preg_match($regex, $function, $matches)) {
-                    $sublibraryId = self::createSublibraryIdentifier($matches[2], $matches[1]);
-                    if (!in_array($sublibraryId, $sublibraryIds, true)) {
-                        $sublibraryIds[] = $sublibraryId;
+                    $sublibrary = $getIds ? $matches[2] : 'F'.$matches[1];
+                    if (!in_array($sublibrary, $sublibraries, true)) {
+                        $sublibraries[] = $sublibrary;
                     }
                 }
             }
         }
 
-        return $sublibraryIds;
+        return $sublibraries;
     }
 
     /**
-     * extracts the org unit ID and the sublibrary code from the sublibrary ID.
+     * Checks if the given a string is a valid Sublibrary identifier.
      */
-    private static function parseSublibraryIdentifier(string $sublibraryIdentifier, string &$orgUnitId = null, string &$sublibraryCode = null): bool
+    private static function parseSublibraryIdentifier(string $sublibraryIdentifier): bool
     {
-        $regex = "/^([\d_]+)-F(\d+)$/i";
+        // single ID pattern (e.g. 1190)
+        $regex = "/^([\d_]+)$/i";
 
-        if (preg_match($regex, $sublibraryIdentifier, $matches)) {
-            $orgUnitId = $matches[1];
-            $sublibraryCode = $matches[2];
-
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * creates the sublibrary ID from the org unit ID and the sublibrary code.
-     */
-    private static function createSublibraryIdentifier(string $orgUnitId, string $sublibraryCode): string
-    {
-        return $orgUnitId.'-F'.$sublibraryCode;
+        return preg_match($regex, $sublibraryIdentifier) !== false;
     }
 }

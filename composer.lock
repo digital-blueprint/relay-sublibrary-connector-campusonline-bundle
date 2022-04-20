@@ -516,12 +516,11 @@
             "source": {
                 "type": "git",
                 "url": "git@gitlab.tugraz.at:dbp/library/dbp-relay-sublibrary-bundle.git",
-                "reference": "00009a5d3cb5663b0334c2e761aeb227a4c97b6c"
+                "reference": "9cbd963c77e7bcf269b211b47247a0de246e94d5"
             },
             "require": {
                 "adldap2/adldap2": "^10.4",
                 "api-platform/core": "^2.6",
-                "dbp/relay-base-organization-bundle": "dev-main as 0.1.3",
                 "dbp/relay-base-person-bundle": "^0.2.0",
                 "dbp/relay-core-bundle": "^0.1.11",
                 "doctrine/common": "^3.1",
@@ -588,7 +587,7 @@
             "license": [
                 "AGPL-3.0-or-later"
             ],
-            "time": "2022-03-30T10:45:41+00:00"
+            "time": "2022-04-20T10:44:53+00:00"
         },
         {
             "name": "doctrine/annotations",
