@@ -75,10 +75,6 @@ class SublibraryProvider implements SublibraryProviderInterface
 
     private function getSublibraryInternal(string $identifier, array $options): ?Sublibrary
     {
-        if (!self::parseSublibraryIdentifier($identifier)) {
-            throw new ApiError(Response::HTTP_BAD_REQUEST, 'invalid library ID format '.$identifier);
-        }
-
         $sublibrary = null;
         $organizationUnitData = null;
         try {
@@ -127,16 +123,5 @@ class SublibraryProvider implements SublibraryProviderInterface
         }
 
         return $sublibraries;
-    }
-
-    /**
-     * Checks if the given a string is a valid Sublibrary identifier.
-     */
-    private static function parseSublibraryIdentifier(string $sublibraryIdentifier): bool
-    {
-        // single ID pattern (e.g. 1190)
-        $regex = "/^([\d_]+)$/i";
-
-        return preg_match($regex, $sublibraryIdentifier) !== false;
     }
 }
