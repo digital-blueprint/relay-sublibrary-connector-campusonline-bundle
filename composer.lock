@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d75e26526a6a58f482d4e28e8bf5dbf",
+    "content-hash": "c019a2eb849c949ef78ccd1c559a10d9",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -439,19 +439,21 @@
         },
         {
             "name": "dbp/relay-core-bundle",
-            "version": "v0.1.35",
+            "version": "v0.1.43",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.tugraz.at/dbp/relay/dbp-relay-core-bundle",
-                "reference": "79d1b52f65989ee2285a9219c4a552f2cbc9bab2"
+                "reference": "0a77fc966ad8a46f8861f2412ed0533777e3a959"
             },
             "require": {
-                "api-platform/core": "^2.6.6",
+                "api-platform/core": "^2.6.8 <2.7.0",
                 "doctrine/annotations": "^1.0",
                 "dragonmantank/cron-expression": "^3.1",
                 "ext-fileinfo": "*",
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^7.0",
+                "kevinrob/guzzle-cache-middleware": "^4.0",
+                "league/uri": "^6.5",
                 "nelmio/cors-bundle": "^2.1.0",
                 "php": "^7.3 || ^8.0",
                 "phpdocumentor/reflection-docblock": "^3.0 || ^4.0 || ^5.0",
@@ -459,7 +461,7 @@
                 "symfony/config": "^5.3",
                 "symfony/event-dispatcher": "^5.3",
                 "symfony/expression-language": "^5.3",
-                "symfony/framework-bundle": "^5.3",
+                "symfony/framework-bundle": "^5.4",
                 "symfony/lock": "^5.4",
                 "symfony/messenger": "^5.3",
                 "symfony/mime": "^5.3",
@@ -475,15 +477,16 @@
                 "symfony/dependency-injection": "5.3.7"
             },
             "require-dev": {
-                "brainmaestro/composer-git-hooks": "^2.8",
-                "friendsofphp/php-cs-fixer": "^3.0",
-                "phpstan/phpstan": "^1.0.0",
-                "phpstan/phpstan-phpunit": "^1.0.0",
-                "phpunit/phpunit": "^9",
-                "symfony/browser-kit": "^5.3",
-                "symfony/http-client": "^5.3",
-                "symfony/phpunit-bridge": "^5.3",
-                "vimeo/psalm": "^4.4"
+                "brainmaestro/composer-git-hooks": "^2.8.5",
+                "friendsofphp/php-cs-fixer": "^3.4",
+                "phpstan/phpstan": "^1.8.5",
+                "phpstan/phpstan-phpunit": "^1.1.1",
+                "phpstan/phpstan-symfony": "^1.2.13",
+                "phpunit/phpunit": "^9.5.24",
+                "symfony/browser-kit": "^5.4.11",
+                "symfony/http-client": "^5.4.12",
+                "symfony/phpunit-bridge": "^5.4.11",
+                "vimeo/psalm": "^4.27"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -503,7 +506,7 @@
                 "AGPL-3.0-or-later"
             ],
             "description": "The core bundle of the Relay API gateway",
-            "time": "2022-05-02T07:07:30+00:00"
+            "time": "2022-09-21T09:14:55+00:00"
         },
         {
             "name": "dbp/relay-sublibrary-bundle",
@@ -11239,5 +11242,5 @@
     "platform-overrides": {
         "php": "7.3"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
