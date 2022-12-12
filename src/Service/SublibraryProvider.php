@@ -93,7 +93,7 @@ class SublibraryProvider implements SublibraryProviderInterface
         }
 
         $postEvent = new SublibraryProviderPostEvent($identifier, $sublibrary, $organizationUnitData, $options);
-        $this->eventDispatcher->dispatch($postEvent, SublibraryProviderPostEvent::NAME);
+        $this->eventDispatcher->dispatch($postEvent);
 
         return $postEvent->getSublibrary();
     }
