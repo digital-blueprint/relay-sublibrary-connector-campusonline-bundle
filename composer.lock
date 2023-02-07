@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "317691461ed59b2325512a17b4c3b4e5",
+    "content-hash": "1ad1fd64c6472d1c24fc82a2e4256454",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -233,43 +233,6 @@
             "time": "2022-01-11T10:29:54+00:00"
         },
         {
-            "name": "dbp/campusonline-api",
-            "version": "v0.2.17",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.tugraz.at/dbp/campus-online/dbp-campusonline-api",
-                "reference": "27377e6f0560e8f6656b03b5dea2106e19f6a2ea"
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^7.3",
-                "kevinrob/guzzle-cache-middleware": "^3.5 || ^4.0",
-                "league/uri": "^6.5",
-                "php": ">=7.3",
-                "symfony/polyfill-php80": "^1.23"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.0",
-                "phpstan/phpstan": "^1.0.0",
-                "phpstan/phpstan-phpunit": "^1.0.0",
-                "phpunit/phpunit": "^9.5",
-                "symfony/phpunit-bridge": "^5.2",
-                "vimeo/psalm": "^4.2.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbp\\CampusonlineApi\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "AGPL-3.0-or-later"
-            ],
-            "time": "2022-11-15T11:09:38+00:00"
-        },
-        {
             "name": "dbp/relay-base-organization-bundle",
             "version": "v0.2.0",
             "source": {
@@ -317,76 +280,6 @@
                 "AGPL-3.0-or-later"
             ],
             "time": "2022-11-15T09:46:14+00:00"
-        },
-        {
-            "name": "dbp/relay-base-organization-connector-campusonline-bundle",
-            "version": "v0.1.4",
-            "source": {
-                "type": "git",
-                "url": "git@gitlab.tugraz.at:dbp/relay/dbp-relay-base-organization-connector-campusonline-bundle.git",
-                "reference": "208da35798e93163189772bea3be39877eac6d8e"
-            },
-            "require": {
-                "api-platform/core": "^2.6",
-                "dbp/campusonline-api": "^0.2.6",
-                "dbp/relay-base-organization-bundle": "^0.2.0",
-                "dbp/relay-core-bundle": "^0.1.56",
-                "ext-json": "*",
-                "php": ">=7.3",
-                "symfony/framework-bundle": "^5.4"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.4",
-                "phpstan/phpstan": "^1.8.2",
-                "phpstan/phpstan-phpunit": "^1.1.1",
-                "phpunit/phpunit": "^9.5.24",
-                "symfony/browser-kit": "^5.4.11",
-                "symfony/http-client": "^5.4.12",
-                "symfony/monolog-bundle": "^3.8",
-                "symfony/phpunit-bridge": "^5.4.11",
-                "vimeo/psalm": "^4.26"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Dbp\\Relay\\BaseOrganizationConnectorCampusonlineBundle\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Dbp\\Relay\\BaseOrganizationConnectorCampusonlineBundle\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "@php vendor/bin/phpunit"
-                ],
-                "phpstan": [
-                    "@php vendor/bin/phpstan analyze --ansi"
-                ],
-                "psalm": [
-                    "@php vendor/bin/psalm"
-                ],
-                "lint": [
-                    "@composer run cs",
-                    "@composer run phpstan",
-                    "@composer run psalm"
-                ],
-                "cs-fix": [
-                    "@php vendor/bin/php-cs-fixer --ansi fix"
-                ],
-                "cs": [
-                    "@php vendor/bin/php-cs-fixer --ansi fix --dry-run --diff"
-                ],
-                "coverage": [
-                    "@php vendor/bin/phpunit --coverage-html _coverage"
-                ]
-            },
-            "license": [
-                "AGPL-3.0-or-later"
-            ],
-            "description": "A template bundle for the Relay API gateway",
-            "time": "2022-11-15T11:11:17+00:00"
         },
         {
             "name": "dbp/relay-base-person-bundle",
@@ -439,11 +332,11 @@
         },
         {
             "name": "dbp/relay-core-bundle",
-            "version": "v0.1.56",
+            "version": "v0.1.73",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.tugraz.at/dbp/relay/dbp-relay-core-bundle",
-                "reference": "0183be15e0c582d935420fb558ea293ab6af1b8b"
+                "reference": "49ded5104452bf56301aa782823e12537642946b"
             },
             "require": {
                 "api-platform/core": "^2.6.8 <2.7.0",
@@ -507,7 +400,7 @@
                 "AGPL-3.0-or-later"
             ],
             "description": "The core bundle of the Relay API gateway",
-            "time": "2022-11-15T08:43:56+00:00"
+            "time": "2023-02-06T09:38:35+00:00"
         },
         {
             "name": "dbp/relay-sublibrary-bundle",

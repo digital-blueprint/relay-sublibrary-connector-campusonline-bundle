@@ -4,43 +4,41 @@ declare(strict_types=1);
 
 namespace Dbp\Relay\SublibraryConnectorCampusonlineBundle\Event;
 
-use Dbp\CampusonlineApi\LegacyWebService\Organization\OrganizationUnitData;
+use Dbp\Relay\BaseOrganizationBundle\Entity\Organization;
 use Dbp\Relay\SublibraryBundle\Entity\Sublibrary;
 use Symfony\Contracts\EventDispatcher\Event;
 
 class SublibraryProviderPostEvent extends Event
 {
-    public const NAME = 'dbp.relay_sublibrary_connector_campusonline.sublibrary_provider.post';
-
     /** @var string */
-    private $organizationUnitId;
+    private $organizationId;
 
     /** @var Sublibrary|null */
     private $sublibrary;
 
-    /** @var OrganizationUnitData|null */
-    private $organizationUnitData;
+    /** @var Organization|null */
+    private $organization;
 
     /** @var array */
     private $options;
 
-    public function __construct(string $organizationUnitId, ?Sublibrary $sublibrary,
-                                ?OrganizationUnitData $organizationUnitData, array $options = [])
+    public function __construct(string $organizationId, ?Sublibrary $sublibrary,
+                                ?Organization $organization, array $options = [])
     {
-        $this->organizationUnitId = $organizationUnitId;
-        $this->organizationUnitData = $organizationUnitData;
+        $this->organizationId = $organizationId;
+        $this->organization = $organization;
         $this->options = $options;
         $this->sublibrary = $sublibrary;
     }
 
-    public function getOrganizationUnitDataId(): string
+    public function getOrganizationId(): string
     {
-        return $this->organizationUnitId;
+        return $this->organizationId;
     }
 
-    public function getOrganizationUnitData(): ?OrganizationUnitData
+    public function getOrganization(): ?Organization
     {
-        return $this->organizationUnitData;
+        return $this->organization;
     }
 
     public function setSublibrary(Sublibrary $sublibrary)
