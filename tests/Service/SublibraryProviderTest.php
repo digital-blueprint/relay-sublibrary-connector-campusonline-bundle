@@ -62,4 +62,35 @@ class SublibraryProviderTest extends ApiTestCase
         $this->assertSame('F1490', $sublibraryCodes[0]);
         $this->assertSame('F1610', $sublibraryCodes[1]);
     }
+
+    public function testGetSublibrariesByPersonNoFunctions()
+    {
+        $person = new Person();
+        $person->setExtraData('tug-functions', []);
+        $result = $this->sublibraryProvider->getSublibraryIdsByLibraryManager($person);
+        $this->assertSame([], $result);
+        $result = $this->sublibraryProvider->getSublibraryCodesByLibraryManager($person);
+        $this->assertSame([], $result);
+    }
+
+    public function testGetSublibrariesByPersonUnknownFunction()
+    {
+        $person = new Person();
+        $person->setExtraData('tug-functions', ['nope']);
+        $result = $this->sublibraryProvider->getSublibraryIdsByLibraryManager($person);
+        $this->assertSame([], $result);
+        $result = $this->sublibraryProvider->getSublibraryCodesByLibraryManager($person);
+        $this->assertSame([], $result);
+    }
+
+    public function testGetSublibrariesByPersonOtherFunction()
+    {
+        $person = new Person();
+        $person->setExtraData('tug-functions', ['ANG:D:4370:2322']);
+
+        $result = $this->sublibraryProvider->getSublibraryIdsByLibraryManager($person);
+        $this->assertSame([], $result);
+        $result = $this->sublibraryProvider->getSublibraryCodesByLibraryManager($person);
+        $this->assertSame([], $result);
+    }
 }
