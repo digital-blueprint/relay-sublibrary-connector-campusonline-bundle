@@ -26,10 +26,6 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@gitlab.tugraz.at:dbp/library/dbp-relay-sublibrary-bundle.git"
-        },
-        {
-            "type": "vcs",
             "url": "git@gitlab.tugraz.at:dbp/relay/dbp-relay-base-organization-connector-campusonline-bundle.git"
         }
     ],

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ad1fd64c6472d1c24fc82a2e4256454",
+    "content-hash": "5b9e79bcb35c1a720ed9d9e26956e324",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -407,8 +407,14 @@
             "version": "v0.1.6",
             "source": {
                 "type": "git",
-                "url": "git@gitlab.tugraz.at:dbp/library/dbp-relay-sublibrary-bundle.git",
+                "url": "https://github.com/digital-blueprint/relay-sublibrary-bundle.git",
                 "reference": "8513cc0d8eeb3341494870597832fdf4df2dc9c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/8513cc0d8eeb3341494870597832fdf4df2dc9c8",
+                "reference": "8513cc0d8eeb3341494870597832fdf4df2dc9c8",
+                "shasum": ""
             },
             "require": {
                 "adldap2/adldap2": "^10.4",
@@ -448,36 +454,14 @@
                     "Dbp\\Relay\\SublibraryBundle\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Dbp\\Relay\\SublibraryBundle\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "@php vendor/bin/phpunit"
-                ],
-                "phpstan": [
-                    "@php vendor/bin/phpstan analyze --ansi"
-                ],
-                "psalm": [
-                    "@php vendor/bin/psalm"
-                ],
-                "lint": [
-                    "@composer run cs",
-                    "@composer run phpstan",
-                    "@composer run psalm"
-                ],
-                "cs-fix": [
-                    "@php vendor/bin/php-cs-fixer --ansi fix"
-                ],
-                "cs": [
-                    "@php vendor/bin/php-cs-fixer --ansi fix --dry-run --diff"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "AGPL-3.0-or-later"
             ],
+            "support": {
+                "issues": "https://github.com/digital-blueprint/relay-sublibrary-bundle/issues",
+                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.1.6"
+            },
             "time": "2022-05-02T09:03:17+00:00"
         },
         {
@@ -8565,6 +8549,7 @@
                 "issues": "https://github.com/PHP-CS-Fixer/diff/issues",
                 "source": "https://github.com/PHP-CS-Fixer/diff/tree/v2.0.2"
             },
+            "abandoned": true,
             "time": "2020-10-14T08:32:19+00:00"
         },
         {
@@ -11141,5 +11126,5 @@
     "platform-overrides": {
         "php": "7.3"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
