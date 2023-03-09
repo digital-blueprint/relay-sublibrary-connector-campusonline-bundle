@@ -114,6 +114,11 @@ class SublibraryProvider implements SublibraryProviderInterface
             foreach ($functions as $function) {
                 if (preg_match($regex, $function, $matches)) {
                     $sublibrary = $getIds ? $matches[2] : 'F'.$matches[1];
+                    if (!$getIds) {
+                        if (strlen($sublibrary) === 6) {
+                            $sublibrary = substr($sublibrary, 0, -1);
+                        }
+                    }
                     if (!in_array($sublibrary, $sublibraries, true)) {
                         $sublibraries[] = $sublibrary;
                     }
