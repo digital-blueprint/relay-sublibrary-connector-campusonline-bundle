@@ -27,8 +27,8 @@ class TestOrganizationProvider implements OrganizationProviderInterface
         $org->setIdentifier($identifier);
         $org->setName(self::toOrganizationName($identifier));
 
-        if (($include = LocalData::getIncludeParameter($options)) !== null) {
-            if ($include === SublibraryProvider::ORGANIZATION_CODE_ATTRIBUTE_NAME) {
+        if (($localDataAttributes = LocalData::getLocalDataAttributes($options)) !== null) {
+            if (in_array(SublibraryProvider::ORGANIZATION_CODE_ATTRIBUTE_NAME, $localDataAttributes, true)) {
                 $org->setLocalDataValue(SublibraryProvider::ORGANIZATION_CODE_ATTRIBUTE_NAME, self::toOrganizationCode($identifier));
             }
         }

@@ -78,7 +78,7 @@ class SublibraryProvider implements SublibraryProviderInterface
     {
         $organization = null;
         try {
-            LocalData::addIncludeParameter($options, [self::ORGANIZATION_CODE_ATTRIBUTE_NAME]);
+            LocalData::requestLocalDataAttributes($options, [self::ORGANIZATION_CODE_ATTRIBUTE_NAME]);
             $organization = $this->organizationProvider->getOrganizationById($identifier, $options);
         } catch (ApiError $exception) {
         }
