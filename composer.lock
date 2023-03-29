@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "713d347d042aba3c85f3df270b7e85f5",
+    "content-hash": "d3bc3d980cdb2fd029e6bd939b418a92",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -415,23 +415,23 @@
         },
         {
             "name": "dbp/relay-sublibrary-bundle",
-            "version": "v0.1.13",
+            "version": "v0.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-sublibrary-bundle.git",
-                "reference": "6e1477e9fe3939e5340c26cca9c46d2bc2a92013"
+                "reference": "b87932f19d8972ab813ce32466fab0792c76b87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/6e1477e9fe3939e5340c26cca9c46d2bc2a92013",
-                "reference": "6e1477e9fe3939e5340c26cca9c46d2bc2a92013",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/b87932f19d8972ab813ce32466fab0792c76b87c",
+                "reference": "b87932f19d8972ab813ce32466fab0792c76b87c",
                 "shasum": ""
             },
             "require": {
                 "adldap2/adldap2": "^10.4",
                 "api-platform/core": "^2.6",
                 "dbp/relay-base-person-bundle": "^0.2.0",
-                "dbp/relay-core-bundle": "^0.1.34",
+                "dbp/relay-core-bundle": "^0.1.91",
                 "doctrine/collections": "^1.6",
                 "doctrine/common": "^3.1",
                 "ext-json": "*",
@@ -472,9 +472,9 @@
             ],
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-sublibrary-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.1.13"
+                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.1.14"
             },
-            "time": "2023-02-27T12:00:52+00:00"
+            "time": "2023-03-29T12:04:50+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -11003,5 +11003,5 @@
     "platform-overrides": {
         "php": "7.3"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

@@ -108,7 +108,7 @@ class SublibraryProvider implements SublibraryProviderInterface
     {
         $sublibraries = [];
         $regex = "/^F_BIB:F:(\d+):([\d_]+)$/i";
-        $functions = $person->getExtraData('tug-functions');
+        $functions = $person->getLocalDataValue('tug-functions');
 
         if ($functions !== null) {
             foreach ($functions as $function) {
