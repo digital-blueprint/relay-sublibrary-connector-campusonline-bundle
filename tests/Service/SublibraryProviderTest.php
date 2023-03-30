@@ -38,7 +38,7 @@ class SublibraryProviderTest extends ApiTestCase
         ];
 
         $person = new Person();
-        $person->setLocalDataValue('tug-functions', $functions);
+        $person->setLocalDataValue(SublibraryProvider::TUG_FUNCTIONS_ATTRIBUTE_NAME, $functions);
 
         $sublibraryIds = $this->sublibraryProvider->getSublibraryIdsByLibraryManager($person);
         $this->assertCount(2, $sublibraryIds);
@@ -55,7 +55,7 @@ class SublibraryProviderTest extends ApiTestCase
         ];
 
         $person = new Person();
-        $person->setLocalDataValue('tug-functions', $functions);
+        $person->setLocalDataValue(SublibraryProvider::TUG_FUNCTIONS_ATTRIBUTE_NAME, $functions);
 
         $sublibraryCodes = $this->sublibraryProvider->getSublibraryCodesByLibraryManager($person);
         $this->assertCount(2, $sublibraryCodes);
@@ -66,7 +66,7 @@ class SublibraryProviderTest extends ApiTestCase
     public function testGetSublibrariesByPersonNoFunctions()
     {
         $person = new Person();
-        $person->setLocalDataValue('tug-functions', []);
+        $person->setLocalDataValue(SublibraryProvider::TUG_FUNCTIONS_ATTRIBUTE_NAME, []);
         $result = $this->sublibraryProvider->getSublibraryIdsByLibraryManager($person);
         $this->assertSame([], $result);
         $result = $this->sublibraryProvider->getSublibraryCodesByLibraryManager($person);
@@ -76,7 +76,7 @@ class SublibraryProviderTest extends ApiTestCase
     public function testGetSublibrariesByPersonUnknownFunction()
     {
         $person = new Person();
-        $person->setLocalDataValue('tug-functions', ['nope']);
+        $person->setLocalDataValue(SublibraryProvider::TUG_FUNCTIONS_ATTRIBUTE_NAME, ['nope']);
         $result = $this->sublibraryProvider->getSublibraryIdsByLibraryManager($person);
         $this->assertSame([], $result);
         $result = $this->sublibraryProvider->getSublibraryCodesByLibraryManager($person);
@@ -86,7 +86,7 @@ class SublibraryProviderTest extends ApiTestCase
     public function testGetSublibrariesByPersonOtherFunction()
     {
         $person = new Person();
-        $person->setLocalDataValue('tug-functions', ['ANG:D:4370:2322']);
+        $person->setLocalDataValue(SublibraryProvider::TUG_FUNCTIONS_ATTRIBUTE_NAME, ['ANG:D:4370:2322']);
 
         $result = $this->sublibraryProvider->getSublibraryIdsByLibraryManager($person);
         $this->assertSame([], $result);

@@ -16,6 +16,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class SublibraryProvider implements SublibraryProviderInterface
 {
     public const ORGANIZATION_CODE_ATTRIBUTE_NAME = 'code';
+    public const TUG_FUNCTIONS_ATTRIBUTE_NAME = 'tugFunctions';
 
     /** @var OrganizationProviderInterface */
     private $organizationProvider;
@@ -108,7 +109,7 @@ class SublibraryProvider implements SublibraryProviderInterface
     {
         $sublibraries = [];
         $regex = "/^F_BIB:F:(\d+):([\d_]+)$/i";
-        $functions = $person->getLocalDataValue('tug-functions');
+        $functions = $person->getLocalDataValue(self::TUG_FUNCTIONS_ATTRIBUTE_NAME);
 
         if ($functions !== null) {
             foreach ($functions as $function) {
