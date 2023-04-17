@@ -293,11 +293,17 @@
         },
         {
             "name": "dbp/relay-base-person-bundle",
-            "version": "v0.2.15",
+            "version": "v0.2.16",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.tugraz.at/dbp/relay/dbp-relay-base-person-bundle",
-                "reference": "f9192b056651487ea8d5cab81563bcf0ffe0b418"
+                "url": "https://github.com/digital-blueprint/relay-base-person-bundle.git",
+                "reference": "8241ff211f732ee4927ab565b4c3cde65e13d917"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-base-person-bundle/zipball/8241ff211f732ee4927ab565b4c3cde65e13d917",
+                "reference": "8241ff211f732ee4927ab565b4c3cde65e13d917",
+                "shasum": ""
             },
             "require": {
                 "api-platform/core": "^2.6.3",
@@ -338,7 +344,11 @@
             "license": [
                 "AGPL-3.0-or-later"
             ],
-            "time": "2023-03-29T11:04:16+00:00"
+            "support": {
+                "issues": "https://github.com/digital-blueprint/relay-base-person-bundle/issues",
+                "source": "https://github.com/digital-blueprint/relay-base-person-bundle/tree/v0.2.16"
+            },
+            "time": "2023-04-13T09:56:32+00:00"
         },
         {
             "name": "dbp/relay-core-bundle",
@@ -8669,16 +8679,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.11",
+            "version": "1.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "8aa62e6ea8b58ffb650e02940e55a788cbc3fe21"
+                "reference": "f07bf8c6980b81bf9e49d44bd0caf2e737614a70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/8aa62e6ea8b58ffb650e02940e55a788cbc3fe21",
-                "reference": "8aa62e6ea8b58ffb650e02940e55a788cbc3fe21",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f07bf8c6980b81bf9e49d44bd0caf2e737614a70",
+                "reference": "f07bf8c6980b81bf9e49d44bd0caf2e737614a70",
                 "shasum": ""
             },
             "require": {
@@ -8727,7 +8737,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-04T19:17:42+00:00"
+            "time": "2023-04-12T19:29:52+00:00"
         },
         {
             "name": "phpstan/phpstan-phpunit",
