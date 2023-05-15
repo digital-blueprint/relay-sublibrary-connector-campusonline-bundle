@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3bc3d980cdb2fd029e6bd939b418a92",
+    "content-hash": "cea34d4696f9cb00abd990341bbf4731",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -360,16 +360,16 @@
         },
         {
             "name": "dbp/relay-core-bundle",
-            "version": "v0.1.101",
+            "version": "v0.1.102",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-core-bundle.git",
-                "reference": "8bb8519054401f9c8707abbbdaf4ccf7ad18f840"
+                "reference": "23979d131f0223abfd2260fdd7d41e9caa2d382c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-core-bundle/zipball/8bb8519054401f9c8707abbbdaf4ccf7ad18f840",
-                "reference": "8bb8519054401f9c8707abbbdaf4ccf7ad18f840",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-core-bundle/zipball/23979d131f0223abfd2260fdd7d41e9caa2d382c",
+                "reference": "23979d131f0223abfd2260fdd7d41e9caa2d382c",
                 "shasum": ""
             },
             "require": {
@@ -437,9 +437,9 @@
             "description": "The core bundle of the Relay API gateway",
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-core-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-core-bundle/tree/v0.1.101"
+                "source": "https://github.com/digital-blueprint/relay-core-bundle/tree/v0.1.102"
             },
-            "time": "2023-05-11T07:07:46+00:00"
+            "time": "2023-05-15T09:35:13+00:00"
         },
         {
             "name": "dbp/relay-sublibrary-bundle",
