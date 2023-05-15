@@ -1,6 +1,6 @@
 # DbpRelaySublibraryConnectorCampusonlineBundle
 
-[GitLab](https://gitlab.tugraz.at/dbp/sublibrary/dbp-relay-sublibrary-connector-campusonline-bundle)
+[GitHub](https://github.com/digital-blueprint/relay-sublibrary-connector-campusonline-bundle)
 
 This Symfony bundle can be used as a template for creating new bundles for the
 DBP Relay project.
