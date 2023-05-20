@@ -360,16 +360,16 @@
         },
         {
             "name": "dbp/relay-core-bundle",
-            "version": "v0.1.102",
+            "version": "v0.1.103",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-core-bundle.git",
-                "reference": "23979d131f0223abfd2260fdd7d41e9caa2d382c"
+                "reference": "ba7595372088b8e33f53d68f37344d823613ae29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-core-bundle/zipball/23979d131f0223abfd2260fdd7d41e9caa2d382c",
-                "reference": "23979d131f0223abfd2260fdd7d41e9caa2d382c",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-core-bundle/zipball/ba7595372088b8e33f53d68f37344d823613ae29",
+                "reference": "ba7595372088b8e33f53d68f37344d823613ae29",
                 "shasum": ""
             },
             "require": {
@@ -437,29 +437,29 @@
             "description": "The core bundle of the Relay API gateway",
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-core-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-core-bundle/tree/v0.1.102"
+                "source": "https://github.com/digital-blueprint/relay-core-bundle/tree/v0.1.103"
             },
-            "time": "2023-05-15T09:35:13+00:00"
+            "time": "2023-05-17T12:00:58+00:00"
         },
         {
             "name": "dbp/relay-sublibrary-bundle",
-            "version": "v0.1.18",
+            "version": "v0.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-sublibrary-bundle.git",
-                "reference": "f13836ce66da5d088e23527bf15711478bace0f8"
+                "reference": "9c8db2ef10a8880c9fd498e9156ae01c8b7c270e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/f13836ce66da5d088e23527bf15711478bace0f8",
-                "reference": "f13836ce66da5d088e23527bf15711478bace0f8",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/9c8db2ef10a8880c9fd498e9156ae01c8b7c270e",
+                "reference": "9c8db2ef10a8880c9fd498e9156ae01c8b7c270e",
                 "shasum": ""
             },
             "require": {
                 "adldap2/adldap2": "^10.4",
-                "api-platform/core": "^2.6",
+                "api-platform/core": "^2.7.11",
                 "dbp/relay-base-person-bundle": "^0.2.0",
-                "dbp/relay-core-bundle": "^0.1.91",
+                "dbp/relay-core-bundle": "^0.1.98",
                 "doctrine/collections": "^1.6",
                 "doctrine/common": "^3.1",
                 "ext-json": "*",
@@ -500,9 +500,9 @@
             ],
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-sublibrary-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.1.18"
+                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.1.19"
             },
-            "time": "2023-05-03T11:55:13+00:00"
+            "time": "2023-05-15T11:17:03+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1047,16 +1047,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "3.1.4",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "8bf8ab15960787f1a49d405f6eb8c787b4841119"
+                "reference": "63fee8c33bef740db6730eb2a750cd3da6495603"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/8bf8ab15960787f1a49d405f6eb8c787b4841119",
-                "reference": "8bf8ab15960787f1a49d405f6eb8c787b4841119",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/63fee8c33bef740db6730eb2a750cd3da6495603",
+                "reference": "63fee8c33bef740db6730eb2a750cd3da6495603",
                 "shasum": ""
             },
             "require": {
@@ -1125,7 +1125,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/persistence/issues",
-                "source": "https://github.com/doctrine/persistence/tree/3.1.4"
+                "source": "https://github.com/doctrine/persistence/tree/3.2.0"
             },
             "funding": [
                 {
@@ -1141,7 +1141,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-03T11:13:07+00:00"
+            "time": "2023-05-17T18:32:04+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -1206,16 +1206,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.6.0",
+            "version": "7.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "733dd89533dd371a0987172727df15f500dab0ef"
+                "reference": "8444a2bacf1960bc6a2b62ed86b8e72e11eebe51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/733dd89533dd371a0987172727df15f500dab0ef",
-                "reference": "733dd89533dd371a0987172727df15f500dab0ef",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8444a2bacf1960bc6a2b62ed86b8e72e11eebe51",
+                "reference": "8444a2bacf1960bc6a2b62ed86b8e72e11eebe51",
                 "shasum": ""
             },
             "require": {
@@ -1311,7 +1311,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.6.0"
+                "source": "https://github.com/guzzle/guzzle/tree/7.6.1"
             },
             "funding": [
                 {
@@ -1327,7 +1327,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-14T11:23:39+00:00"
+            "time": "2023-05-15T20:43:01+00:00"
         },
         {
             "name": "guzzlehttp/promises",
