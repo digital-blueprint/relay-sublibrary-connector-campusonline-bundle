@@ -6,7 +6,7 @@ namespace Dbp\Relay\SublibraryConnectorCampusonlineBundle\Tests\Service;
 
 use Dbp\Relay\BaseOrganizationBundle\API\OrganizationProviderInterface;
 use Dbp\Relay\BaseOrganizationBundle\Entity\Organization;
-use Dbp\Relay\CoreBundle\LocalData\LocalData;
+use Dbp\Relay\CoreBundle\Rest\Options;
 use Dbp\Relay\SublibraryConnectorCampusonlineBundle\Service\SublibraryProvider;
 
 class TestOrganizationProvider implements OrganizationProviderInterface
@@ -27,7 +27,7 @@ class TestOrganizationProvider implements OrganizationProviderInterface
         $org->setIdentifier($identifier);
         $org->setName(self::toOrganizationName($identifier));
 
-        if (($localDataAttributes = LocalData::getLocalDataAttributes($options)) !== null) {
+        if (($localDataAttributes = Options::getLocalDataAttributes($options)) !== null) {
             if (in_array(SublibraryProvider::ORGANIZATION_CODE_ATTRIBUTE_NAME, $localDataAttributes, true)) {
                 $org->setLocalDataValue(SublibraryProvider::ORGANIZATION_CODE_ATTRIBUTE_NAME, self::toOrganizationCode($identifier));
             }

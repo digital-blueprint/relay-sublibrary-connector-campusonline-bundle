@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Dbp\Relay\SublibraryConnectorCampusonlineBundle\Tests\Service;
 
-use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
+use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
 use Dbp\Relay\BasePersonBundle\Entity\Person;
 use Dbp\Relay\SublibraryConnectorCampusonlineBundle\Service\SublibraryProvider;
 use Symfony\Component\EventDispatcher\EventDispatcher;
