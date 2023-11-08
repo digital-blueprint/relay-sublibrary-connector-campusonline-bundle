@@ -8,6 +8,7 @@ use Dbp\Relay\BaseOrganizationBundle\API\OrganizationProviderInterface;
 use Dbp\Relay\BasePersonBundle\Entity\Person;
 use Dbp\Relay\CoreBundle\Exception\ApiError;
 use Dbp\Relay\CoreBundle\Rest\Options;
+use Dbp\Relay\SublibraryBundle\API\SublibraryInterface;
 use Dbp\Relay\SublibraryBundle\API\SublibraryProviderInterface;
 use Dbp\Relay\SublibraryBundle\Entity\Sublibrary;
 use Dbp\Relay\SublibraryConnectorCampusonlineBundle\Event\SublibraryProviderPostEvent;
@@ -30,7 +31,7 @@ class SublibraryProvider implements SublibraryProviderInterface
         $this->eventDispatcher = $eventDispatcher;
     }
 
-    public function getSublibrary(string $identifier, array $options = []): ?Sublibrary
+    public function getSublibrary(string $identifier, array $options = []): ?SublibraryInterface
     {
         return $this->getSublibraryInternal($identifier, $options);
     }

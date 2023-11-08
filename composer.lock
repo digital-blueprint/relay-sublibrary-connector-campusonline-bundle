@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d69ec423011a1bd53f0ec565686e6e9c",
+    "content-hash": "a9a51336ce2ffc1d651dbab667ed6479",
     "packages": [
         {
             "name": "adldap2/adldap2",
@@ -361,16 +361,16 @@
         },
         {
             "name": "dbp/relay-core-bundle",
-            "version": "v0.1.127",
+            "version": "v0.1.128",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-core-bundle.git",
-                "reference": "f2f9393c14907a68a5970568c895fb9b5f0813ef"
+                "reference": "9621bb346110bf00a70184c38f9f30672c511cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-core-bundle/zipball/f2f9393c14907a68a5970568c895fb9b5f0813ef",
-                "reference": "f2f9393c14907a68a5970568c895fb9b5f0813ef",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-core-bundle/zipball/9621bb346110bf00a70184c38f9f30672c511cb8",
+                "reference": "9621bb346110bf00a70184c38f9f30672c511cb8",
                 "shasum": ""
             },
             "require": {
@@ -381,7 +381,7 @@
                 "ext-intl": "*",
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^7.5",
-                "kevinrob/guzzle-cache-middleware": "^4.0",
+                "kevinrob/guzzle-cache-middleware": "^4.0 || ^5.0",
                 "nelmio/cors-bundle": "^2.2",
                 "php": ">=7.3",
                 "phpdocumentor/reflection-docblock": "^3.0 || ^4.0 || ^5.0",
@@ -438,22 +438,22 @@
             "description": "The core bundle of the Relay API gateway",
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-core-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-core-bundle/tree/v0.1.127"
+                "source": "https://github.com/digital-blueprint/relay-core-bundle/tree/v0.1.128"
             },
-            "time": "2023-10-05T07:41:23+00:00"
+            "time": "2023-11-06T10:39:36+00:00"
         },
         {
             "name": "dbp/relay-sublibrary-bundle",
-            "version": "v0.1.23",
+            "version": "v0.1.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-sublibrary-bundle.git",
-                "reference": "d183070da35b26e7fe7ed04546dfb6aa196002fc"
+                "reference": "281f89d081c046e0ded18cc6c7277356b7e22e8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/d183070da35b26e7fe7ed04546dfb6aa196002fc",
-                "reference": "d183070da35b26e7fe7ed04546dfb6aa196002fc",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/281f89d081c046e0ded18cc6c7277356b7e22e8b",
+                "reference": "281f89d081c046e0ded18cc6c7277356b7e22e8b",
                 "shasum": ""
             },
             "require": {
@@ -466,7 +466,7 @@
                 "ext-json": "*",
                 "ext-simplexml": "*",
                 "guzzlehttp/guzzle": "^7.0",
-                "kevinrob/guzzle-cache-middleware": "^3.3 | ^4.0",
+                "kevinrob/guzzle-cache-middleware": "^3.3 || ^4.0 || ^5.0",
                 "league/uri": "^6.4",
                 "php": ">=7.3",
                 "symfony/framework-bundle": "^5.2",
@@ -501,9 +501,9 @@
             ],
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-sublibrary-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.1.23"
+                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.1.26"
             },
-            "time": "2023-10-10T07:57:31+00:00"
+            "time": "2023-11-08T14:15:32+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1584,16 +1584,16 @@
         },
         {
             "name": "kevinrob/guzzle-cache-middleware",
-            "version": "v4.1.2",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kevinrob/guzzle-cache-middleware.git",
-                "reference": "2546d1035e844da378b03e1fb42d3d1cf53187e2"
+                "reference": "65f85ca874c7d9b357359c6d38c6cd56e942b58c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kevinrob/guzzle-cache-middleware/zipball/2546d1035e844da378b03e1fb42d3d1cf53187e2",
-                "reference": "2546d1035e844da378b03e1fb42d3d1cf53187e2",
+                "url": "https://api.github.com/repos/Kevinrob/guzzle-cache-middleware/zipball/65f85ca874c7d9b357359c6d38c6cd56e942b58c",
+                "reference": "65f85ca874c7d9b357359c6d38c6cd56e942b58c",
                 "shasum": ""
             },
             "require": {
@@ -1607,7 +1607,7 @@
                 "cache/simple-cache-bridge": "^0.1 || ^1.0",
                 "doctrine/cache": "^1.10",
                 "illuminate/cache": "^5.0",
-                "league/flysystem": "^1.0",
+                "league/flysystem": "^2.5",
                 "phpunit/phpunit": "^8.5.15 || ^9.5",
                 "psr/cache": "^1.0",
                 "symfony/cache": "^4.4 || ^5.0",
@@ -1663,9 +1663,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Kevinrob/guzzle-cache-middleware/issues",
-                "source": "https://github.com/Kevinrob/guzzle-cache-middleware/tree/v4.1.2"
+                "source": "https://github.com/Kevinrob/guzzle-cache-middleware/tree/v5.0.0"
             },
-            "time": "2023-06-14T11:19:21+00:00"
+            "time": "2023-11-05T12:31:18+00:00"
         },
         {
             "name": "league/uri",
@@ -4391,30 +4391,30 @@
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "v3.8.0",
+            "version": "v3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/monolog-bundle.git",
-                "reference": "a41bbcdc1105603b6d73a7d9a43a3788f8e0fb7d"
+                "reference": "414f951743f4aa1fd0f5bf6a0e9c16af3fe7f181"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/a41bbcdc1105603b6d73a7d9a43a3788f8e0fb7d",
-                "reference": "a41bbcdc1105603b6d73a7d9a43a3788f8e0fb7d",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/414f951743f4aa1fd0f5bf6a0e9c16af3fe7f181",
+                "reference": "414f951743f4aa1fd0f5bf6a0e9c16af3fe7f181",
                 "shasum": ""
             },
             "require": {
-                "monolog/monolog": "^1.22 || ^2.0 || ^3.0",
-                "php": ">=7.1.3",
-                "symfony/config": "~4.4 || ^5.0 || ^6.0",
-                "symfony/dependency-injection": "^4.4 || ^5.0 || ^6.0",
-                "symfony/http-kernel": "~4.4 || ^5.0 || ^6.0",
-                "symfony/monolog-bridge": "~4.4 || ^5.0 || ^6.0"
+                "monolog/monolog": "^1.25.1 || ^2.0 || ^3.0",
+                "php": ">=7.2.5",
+                "symfony/config": "^5.4 || ^6.0 || ^7.0",
+                "symfony/dependency-injection": "^5.4 || ^6.0 || ^7.0",
+                "symfony/http-kernel": "^5.4 || ^6.0 || ^7.0",
+                "symfony/monolog-bridge": "^5.4 || ^6.0 || ^7.0"
             },
             "require-dev": {
-                "symfony/console": "~4.4 || ^5.0 || ^6.0",
-                "symfony/phpunit-bridge": "^5.2 || ^6.0",
-                "symfony/yaml": "~4.4 || ^5.0 || ^6.0"
+                "symfony/console": "^5.4 || ^6.0 || ^7.0",
+                "symfony/phpunit-bridge": "^6.3 || ^7.0",
+                "symfony/yaml": "^5.4 || ^6.0 || ^7.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -4452,7 +4452,7 @@
             ],
             "support": {
                 "issues": "https://github.com/symfony/monolog-bundle/issues",
-                "source": "https://github.com/symfony/monolog-bundle/tree/v3.8.0"
+                "source": "https://github.com/symfony/monolog-bundle/tree/v3.10.0"
             },
             "funding": [
                 {
@@ -4468,7 +4468,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-10T14:24:36+00:00"
+            "time": "2023-11-06T17:08:13+00:00"
         },
         {
             "name": "symfony/password-hasher",
@@ -10975,5 +10975,5 @@
     "platform-overrides": {
         "php": "7.3"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
