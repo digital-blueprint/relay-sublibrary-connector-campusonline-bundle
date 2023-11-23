@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9a51336ce2ffc1d651dbab667ed6479",
+    "content-hash": "476c99eb553e031556f711548cd97b9c",
     "packages": [
         {
             "name": "api-platform/core",
@@ -378,16 +378,16 @@
         },
         {
             "name": "dbp/relay-sublibrary-bundle",
-            "version": "v0.1.29",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-sublibrary-bundle.git",
-                "reference": "ca9ca3580c3148f332e88de8580fe09a337f4058"
+                "reference": "646589adcb031aa83000b2890623baa73fcfe7c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/ca9ca3580c3148f332e88de8580fe09a337f4058",
-                "reference": "ca9ca3580c3148f332e88de8580fe09a337f4058",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/646589adcb031aa83000b2890623baa73fcfe7c0",
+                "reference": "646589adcb031aa83000b2890623baa73fcfe7c0",
                 "shasum": ""
             },
             "require": {
@@ -435,9 +435,9 @@
             ],
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-sublibrary-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.1.29"
+                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.2.0"
             },
-            "time": "2023-11-15T12:20:18+00:00"
+            "time": "2023-11-23T10:31:12+00:00"
         },
         {
             "name": "directorytree/ldaprecord",
@@ -11234,5 +11234,5 @@
     "platform-overrides": {
         "php": "7.3"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.2.0"
 }
