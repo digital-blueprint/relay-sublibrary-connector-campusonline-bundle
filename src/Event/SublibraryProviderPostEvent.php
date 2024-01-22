@@ -23,7 +23,7 @@ class SublibraryProviderPostEvent extends Event
     private $options;
 
     public function __construct(string $organizationId, ?Sublibrary $sublibrary,
-                                ?Organization $organization, array $options = [])
+        ?Organization $organization, array $options = [])
     {
         $this->organizationId = $organizationId;
         $this->organization = $organization;
