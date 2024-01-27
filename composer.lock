@@ -447,16 +447,16 @@
         },
         {
             "name": "dbp/relay-sublibrary-bundle",
-            "version": "v0.2.1",
+            "version": "v0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-sublibrary-bundle.git",
-                "reference": "ae4fdc0a2d8f61129ba0659f777d000ccba115b8"
+                "reference": "f29d0e681c3b2f3b6aecb15252a8c753e605bc15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/ae4fdc0a2d8f61129ba0659f777d000ccba115b8",
-                "reference": "ae4fdc0a2d8f61129ba0659f777d000ccba115b8",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/f29d0e681c3b2f3b6aecb15252a8c753e605bc15",
+                "reference": "f29d0e681c3b2f3b6aecb15252a8c753e605bc15",
                 "shasum": ""
             },
             "require": {
@@ -471,7 +471,7 @@
                 "guzzlehttp/guzzle": "^7.0",
                 "kevinrob/guzzle-cache-middleware": "^3.3 || ^4.0 || ^5.0",
                 "league/uri": "^6.4",
-                "php": ">=7.3",
+                "php": ">=7.4",
                 "symfony/framework-bundle": "^5.2",
                 "symfony/security-core": "^5.2",
                 "symfony/yaml": "^5.2"
@@ -504,9 +504,9 @@
             ],
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-sublibrary-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.2.1"
+                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.2.2"
             },
-            "time": "2023-11-30T13:34:37+00:00"
+            "time": "2024-01-22T13:15:12+00:00"
         },
         {
             "name": "directorytree/ldaprecord",
@@ -2080,16 +2080,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.72.1",
+            "version": "2.72.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "2b3b3db0a2d0556a177392ff1a3bf5608fa09f78"
+                "reference": "3e7edc41b58d65509baeb0d4a14c8fa41d627130"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2b3b3db0a2d0556a177392ff1a3bf5608fa09f78",
-                "reference": "2b3b3db0a2d0556a177392ff1a3bf5608fa09f78",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/3e7edc41b58d65509baeb0d4a14c8fa41d627130",
+                "reference": "3e7edc41b58d65509baeb0d4a14c8fa41d627130",
                 "shasum": ""
             },
             "require": {
@@ -2183,7 +2183,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-08T23:47:49+00:00"
+            "time": "2024-01-19T00:21:53+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -11312,5 +11312,5 @@
     "platform-overrides": {
         "php": "7.4"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
