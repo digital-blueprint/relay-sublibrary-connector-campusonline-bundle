@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec56bac59212583635b9cfe72eab041d",
+    "content-hash": "60b6f7ef541200f088a030e0a7cd7c2a",
     "packages": [
         {
             "name": "api-platform/core",
@@ -447,16 +447,16 @@
         },
         {
             "name": "dbp/relay-sublibrary-bundle",
-            "version": "v0.2.4",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-sublibrary-bundle.git",
-                "reference": "f2e5f9ed01ffa451c3b6f49b7418e75ee8e57257"
+                "reference": "022d1835e879bd7c48a482bb183f00b71745f1fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/f2e5f9ed01ffa451c3b6f49b7418e75ee8e57257",
-                "reference": "f2e5f9ed01ffa451c3b6f49b7418e75ee8e57257",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/022d1835e879bd7c48a482bb183f00b71745f1fd",
+                "reference": "022d1835e879bd7c48a482bb183f00b71745f1fd",
                 "shasum": ""
             },
             "require": {
@@ -514,9 +514,9 @@
             ],
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-sublibrary-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.2.4"
+                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.3.0"
             },
-            "time": "2024-03-08T09:30:58+00:00"
+            "time": "2024-03-14T11:01:43+00:00"
         },
         {
             "name": "directorytree/ldaprecord",
@@ -11000,5 +11000,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.2.0"
 }
