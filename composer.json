@@ -9,7 +9,7 @@
         "api-platform/core": "^2.7.11",
         "dbp/relay-base-organization-bundle": "^0.2.11",
         "dbp/relay-core-bundle": "^0.1.148",
-        "dbp/relay-sublibrary-bundle": "^0.3.0",
+        "dbp/relay-sublibrary-bundle": "^0.4.0",
         "symfony/framework-bundle": "^5.4 || ^6.4",
         "symfony/config": "^5.4 || ^6.4",
         "symfony/dependency-injection": "^5.4 || ^6.4",
