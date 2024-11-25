@@ -10,11 +10,11 @@
         "dbp/relay-base-organization-bundle": "^0.2.11",
         "dbp/relay-core-bundle": "^0.1.186",
         "dbp/relay-sublibrary-bundle": "^0.4.0",
-        "symfony/framework-bundle": "^5.4 || ^6.4",
-        "symfony/config": "^5.4 || ^6.4",
-        "symfony/dependency-injection": "^5.4 || ^6.4",
-        "symfony/http-kernel": "^5.4 || ^6.4",
-        "symfony/event-dispatcher": "^5.4 || ^6.4",
+        "symfony/framework-bundle": "^6.4",
+        "symfony/config": "^6.4",
+        "symfony/dependency-injection": "^6.4",
+        "symfony/http-kernel": "^6.4",
+        "symfony/event-dispatcher": "^6.4",
         "symfony/event-dispatcher-contracts": "^2.5 || ^3"
     },
     "require-dev": {
@@ -22,10 +22,10 @@
         "phpstan/phpstan": "^1.10.59",
         "phpstan/phpstan-phpunit": "^1.3.16",
         "phpunit/phpunit": "^10.1",
-        "symfony/browser-kit": "^5.4.35 || ^6.4",
-        "symfony/http-client": "^5.4.36 || ^6.4",
+        "symfony/browser-kit": "^6.4",
+        "symfony/http-client": "^6.4",
         "symfony/monolog-bundle": "^3.10",
-        "symfony/phpunit-bridge": "^5.4.36 || ^6.4",
+        "symfony/phpunit-bridge": "^6.4",
         "vimeo/psalm": "^5.22.2"
     },
     "autoload": {

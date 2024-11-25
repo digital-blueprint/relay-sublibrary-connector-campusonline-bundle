@@ -1,3 +1,7 @@
+# Unreleased
+
+* Drop support for Symfony 5
+
 # v0.2.17
 
 * Port to PHPUnit 10
