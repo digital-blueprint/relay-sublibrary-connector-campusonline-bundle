@@ -2,7 +2,11 @@
 
 ## Unreleased
 
+## v0.3.0
+
 * Drop support for Symfony 5
+* Update to dbp/relay-sublibrary-bundle v0.5
+* (breaking) SublibraryProviderPostEvent now uses CoSublibrary instead of Sublibrary.
 
 ## v0.2.17
 
