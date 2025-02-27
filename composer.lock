@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c88e90591094d5e9551824c50e64d36",
+    "content-hash": "31da78981f5ddb00471c956dd135ed6c",
     "packages": [
         {
             "name": "api-platform/core",
@@ -436,28 +436,28 @@
         },
         {
             "name": "dbp/relay-sublibrary-bundle",
-            "version": "v0.4.14",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digital-blueprint/relay-sublibrary-bundle.git",
-                "reference": "59cd5240396fec96156e9d64e2d49d4b86aacca9"
+                "reference": "cb3adf7e88097140dd3e35fde754cb8a3b0bd93e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/59cd5240396fec96156e9d64e2d49d4b86aacca9",
-                "reference": "59cd5240396fec96156e9d64e2d49d4b86aacca9",
+                "url": "https://api.github.com/repos/digital-blueprint/relay-sublibrary-bundle/zipball/cb3adf7e88097140dd3e35fde754cb8a3b0bd93e",
+                "reference": "cb3adf7e88097140dd3e35fde754cb8a3b0bd93e",
                 "shasum": ""
             },
             "require": {
-                "api-platform/core": "^3.2",
+                "api-platform/core": "^3.3",
                 "dbp/relay-base-person-bundle": "^0.2.33",
-                "dbp/relay-core-bundle": "^0.1.186",
+                "dbp/relay-core-bundle": "^0.1.190",
                 "doctrine/collections": "^1.6 || ^2",
                 "doctrine/common": "^3.1",
                 "ext-json": "*",
                 "ext-simplexml": "*",
                 "guzzlehttp/guzzle": "^7.0",
-                "kevinrob/guzzle-cache-middleware": "^3.3 || ^4.0 || ^5.0 || ^6.0",
+                "kevinrob/guzzle-cache-middleware": "^4.0 || ^5.0 || ^6.0",
                 "league/uri": "^6.4 || ^7.4",
                 "php": ">=8.1",
                 "psr/http-message": "^1.0 || ^2.0",
@@ -470,6 +470,7 @@
                 "symfony/http-kernel": "^6.4",
                 "symfony/security-bundle": " ^6.4",
                 "symfony/security-core": "^6.4",
+                "symfony/serializer": "^6.4",
                 "symfony/yaml": "^6.4"
             },
             "conflict": {
@@ -481,6 +482,7 @@
                 "nelmio/cors-bundle": "^2.4.0",
                 "phpstan/phpstan": "^2.0.0",
                 "phpstan/phpstan-phpunit": "^2.0.0",
+                "phpstan/phpstan-symfony": "^2.0",
                 "phpunit/phpunit": "^10.1",
                 "symfony/browser-kit": "^6.4",
                 "symfony/error-handler": "^6.4",
@@ -502,9 +504,9 @@
             ],
             "support": {
                 "issues": "https://github.com/digital-blueprint/relay-sublibrary-bundle/issues",
-                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.4.14"
+                "source": "https://github.com/digital-blueprint/relay-sublibrary-bundle/tree/v0.5.0"
             },
-            "time": "2025-01-14T12:04:11+00:00"
+            "time": "2025-02-27T12:28:17+00:00"
         },
         {
             "name": "doctrine/collections",

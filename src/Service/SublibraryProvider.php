@@ -9,7 +9,7 @@ use Dbp\Relay\CoreBundle\Exception\ApiError;
 use Dbp\Relay\CoreBundle\Rest\Options;
 use Dbp\Relay\SublibraryBundle\API\SublibraryInterface;
 use Dbp\Relay\SublibraryBundle\API\SublibraryProviderInterface;
-use Dbp\Relay\SublibraryBundle\Entity\Sublibrary;
+use Dbp\Relay\SublibraryConnectorCampusonlineBundle\Event\CoSublibrary;
 use Dbp\Relay\SublibraryConnectorCampusonlineBundle\Event\SublibraryProviderPostEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -40,7 +40,7 @@ class SublibraryProvider implements SublibraryProviderInterface
 
         $sublibrary = null;
         if ($organization !== null) {
-            $sublibrary = new Sublibrary();
+            $sublibrary = new CoSublibrary();
             $sublibrary->setIdentifier($organization->getIdentifier());
             $sublibrary->setName($organization->getName());
             $sublibrary->setCode($organization->getLocalDataValue(self::ORGANIZATION_CODE_ATTRIBUTE_NAME));
