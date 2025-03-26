@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Drop support for PHP 8.1
+
 ## v0.3.0
 
 * Drop support for Symfony 5
